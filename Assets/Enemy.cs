@@ -44,7 +44,7 @@ public class Enemy : MonoBehaviour
 
     }
 
-    public void Attacked(int incDmg)
+    public void Attacked(int incDmg, Stats.StatusEffect incEffect)
     {
         myStats.health -= incDmg - myStats.defense;
     }

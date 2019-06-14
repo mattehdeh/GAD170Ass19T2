@@ -11,4 +11,16 @@ public class Stats : MonoBehaviour
     public int luck;
 
     //public int health2, speed2, attack2, defense2, luck2;
+
+    public enum StatusEffect
+    {
+        none,
+        dizzy,
+        poisoned,
+        stunned
+    }
+
+    public StatusEffect myStatus;
+    public StatusEffect attackEffect;
+
 }

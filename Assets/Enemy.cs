@@ -48,4 +48,8 @@ public class Enemy : MonoBehaviour
     {
         myStats.health -= incDmg - myStats.defense;
     }
+    public void AttackTarget()
+    {
+        Attacked(myStats.attack, Stats.StatusEffect.none);
+    }
 }

@@ -9,11 +9,11 @@ public class MyScript1 : MonoBehaviour
     public int HPnow = 10;
     public int HPmax = 20;
     public int Attacks = 2;
-    string Enemy1 = "Rat";
-    string Enemy2 = "Pig";
-    string Enemy3 = "Dog";
-    string Enemy4 = "Cat";
-    public int classSize;
+
+    public int attendanceRate;
+    public float attending = 8;
+    public float classSize = 12;
+
     public bool classCounted;
 
     // Start is called before the first frame update
@@ -27,6 +27,8 @@ public class MyScript1 : MonoBehaviour
         UpdateHealth(-2);
         DisplayHealth(HPnow, HPmax);
         whatDo("Enemy Deals", Attacks, "Damage");
+        attendanceRate = Mathf.RoundToInt(attending / classSize * 100);
+        Debug.Log("Attendance %: " + attendanceRate);
 
      
     }

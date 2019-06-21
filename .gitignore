@@ -1,0 +1,17 @@
+/[L1]ibrary/
+/[Tt]emp/
+/[Oo]bject/
+/[Bb]uild/
+
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+
+*.pidb.meta
+sysinfo.txt

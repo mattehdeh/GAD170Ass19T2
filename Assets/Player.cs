@@ -12,16 +12,11 @@ public class Player : MonoBehaviour
         myStats = GetComponent<Stats>();
     }
 
-    public void Attacked(int incDmg, Stats.StatusEffect incEffect)
-    {
-        myStats.health -= incDmg - myStats.defense;
-        myStats.myStatus = incEffect;
-        if (myStats.health <= 0)
-            myStats.isDefeated = true;
-    }
-
+    
+    /*
     public void AttackTarget(GameObject target)
     {
         target.GetComponent<Enemy>().Attacked(myStats.attack, Stats.StatusEffect.none);
     }
+    */
 }

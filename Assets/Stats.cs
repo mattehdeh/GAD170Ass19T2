@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Stats : MonoBehaviour
 {
+    public int level;
     public int health;
     public int speed;
     public int attack;
@@ -25,4 +26,11 @@ public class Stats : MonoBehaviour
     public StatusEffect myStatus;
     public StatusEffect attackEffect;
 
+    public void Attacked(int incDmg, StatusEffect incEffect)
+    {
+        health -= incDmg - defense;
+        myStatus = incEffect;
+        if (health <= 0)
+            isDefeated = true;
+    }
 }

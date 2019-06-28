@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3936103263824509007}
   - component: {fileID: 3481011329538750052}
   - component: {fileID: 2619816961326100705}
+  - component: {fileID: 7034540951241658199}
   - component: {fileID: 1490506590583252095}
   m_Layer: 0
   m_Name: Player
@@ -107,6 +108,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myStats: {fileID: 0}
+  myExperience: {fileID: 0}
+--- !u!114 &7034540951241658199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2549362706193855101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08b88fb3b658fc64cad339193ec8b4eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xpGet: 0
+  xpHave: 0
+  xpNeed: 0
 --- !u!114 &1490506590583252095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,6 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8607d2fd19edefb4c962bcf5726fe6e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 0
   health: 1000
   speed: 10
   attack: 10

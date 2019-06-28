@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public Stats myStats;
+    public Experience myExperience;
 
     private GameObject GameManager;
 

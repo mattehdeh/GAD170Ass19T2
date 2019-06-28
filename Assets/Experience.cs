@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelUp : MonoBehaviour
+public class Experience : MonoBehaviour
 {
     //Xp given from interaction
-    public int XPAwarded;
+    public int xpGet;
     //Xp gained so far
-    public int XPHave = 0;
+    public int xpHave = 0;
     //Total Xp needed for next level up
-    public int XPNeed;
+    public int xpNeed;
 
     // Start is called before the first frame update
     void Start()
     {
-        XPNeed = (Player.GetComponent<Stats>().level ^ 1.05 * 15 + 10;
+  
 
     }
 

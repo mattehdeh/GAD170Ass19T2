@@ -5,11 +5,13 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public Stats myStats;
+    public Experience myExperience;
 
     // Start is called before the first frame update
     void Start()
     {
         myStats = GetComponent<Stats>();
+        myExperience = GetComponent<Experience>();
     }
 
     

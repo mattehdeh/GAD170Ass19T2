@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2049819871901752649}
   - component: {fileID: 302746632727706496}
   - component: {fileID: 7934089571552379808}
+  - component: {fileID: 684955146778362642}
   - component: {fileID: 6030826404825580611}
   m_Layer: 0
   m_Name: EnemyMedium
@@ -105,7 +106,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b5d402f9446b8c4dac47ef478e256b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myStats: {fileID: 0}
+  myExperience: {fileID: 0}
   myType: 1
+--- !u!114 &684955146778362642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8080095340191181363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08b88fb3b658fc64cad339193ec8b4eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xpGet: 0
+  xpHave: 8
+  xpNeed: 0
 --- !u!114 &6030826404825580611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,10 +136,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8607d2fd19edefb4c962bcf5726fe6e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 0
   health: 150
   speed: 100
   attack: 50
   defense: 25
   luck: 2
+  isDefeated: 0
   myStatus: 0
   attackEffect: 0

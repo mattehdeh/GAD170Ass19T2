@@ -45,10 +45,13 @@ public class GameManager : MonoBehaviour
     {
         if (doBattle)
         {
+            //Set turn based on playerObj speed and enemyObj speed
+            //Fastest should go first, random if same
             StartCoroutine(battleGo());
             doBattle = false;
         }
     }
+
     public void DamageEnemies()
     {
         foreach (GameObject enemy in enemyList)
@@ -56,6 +59,7 @@ public class GameManager : MonoBehaviour
             enemy.GetComponent<Stats>().health -= 10;
         }
     }
+
     public void HealEnemies()
     {
         foreach (GameObject enemy in enemyList)
@@ -63,10 +67,12 @@ public class GameManager : MonoBehaviour
             enemy.GetComponent<Stats>().health += 10;
         }
     }
+
     public void RemoveEnemy(GameObject enemyToRemove)
     {
         enemyList.Remove(enemyToRemove);
     }
+
     public void SpawnEnemy()
     {
         //Spawn an enemy from our list of spawnable enemies

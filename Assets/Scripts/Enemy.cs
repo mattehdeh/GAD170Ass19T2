@@ -18,8 +18,6 @@ public class Enemy : MonoBehaviour
 
     public EnemyTypes myType;
 
-
-
     void Start()
     {
         BattleManager = GameObject.FindGameObjectWithTag("BattleManager");

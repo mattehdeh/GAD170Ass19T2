@@ -7,7 +7,7 @@ public class Experience : MonoBehaviour
     //Xp given from interaction
     public int xpGet;
     //Xp gained so far
-    public int xpHave = 0;
+    public int xpHave;
     //Total Xp needed for next level up
     public int xpNeed;
 

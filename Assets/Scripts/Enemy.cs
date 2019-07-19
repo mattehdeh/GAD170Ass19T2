@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     public Stats myStats;
     public Experience myExperience;
 
-    private GameObject GameManager;
+    private GameObject BattleManager;
 
     public enum EnemyTypes
     {
@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        GameManager = GameObject.FindGameObjectWithTag("GameManager");
+        BattleManager = GameObject.FindGameObjectWithTag("BattleManager");
 
         myStats = GetComponent<Stats>();
         //Stats compenent must exist on the object!
@@ -58,6 +58,6 @@ public class Enemy : MonoBehaviour
 
     public void Defeated()
     {
-        GameManager.GetComponent<GameManager>().RemoveEnemy(gameObject);
+        BattleManager.GetComponent<BattleManager>().RemoveEnemy(gameObject);
     }
 }

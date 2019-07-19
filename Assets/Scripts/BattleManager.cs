@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class BattleManager : MonoBehaviour
 {
     public List<GameObject> enemyList;
 
@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
 
     private bool doBattle = true;
 
+    private GameObject gameManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +40,8 @@ public class GameManager : MonoBehaviour
         {
             enemyList.Add(enemy);
         }
+        //find our gamemangaer
+        gameManager = GameObject.FindGameObjectWithTag("GameManager");
     }
 
     // Update is called once per frame
@@ -120,15 +124,16 @@ public class GameManager : MonoBehaviour
             //Victory
             case CombatState.Victory:
                 Debug.Log("You are win");
-
+                //You will want to assign exp here, before you travel, otherwise you coule have an issue where you dont get your reward
+                //Travels out to the Overworld
+                gameManager.GetComponent<GameManager>().TravelToWorld(GameManager.Worlds.Overworld);
                 break;
-
-            //Tell Player they won
-            //End Game
+                
 
             case CombatState.Loss:
-                //we lose, reset game
-                SceneManager.LoadScene("SampleScene");
+                Debug.Log("You Are Lose");
+                //we lose, travel to Overworld
+                gameManager.GetComponent<GameManager>().TravelToWorld(GameManager.Worlds.Overworld);
                 break;
 
 

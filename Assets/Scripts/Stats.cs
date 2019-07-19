@@ -13,13 +13,11 @@ public class Stats : MonoBehaviour
 
     public bool isDefeated;
 
-    //public int health2, speed2, attack2, defense2, luck2;
-
     public enum StatusEffect
     {
         none,
-        dizzy,
-        poisoned,
+        angry,
+        sad,
         stunned
     }
 

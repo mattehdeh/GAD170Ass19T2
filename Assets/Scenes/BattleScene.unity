@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 7665462}
   - component: {fileID: 7665463}
   m_Layer: 5
-  m_Name: Text (5)
+  m_Name: TextLine (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -411,7 +411,7 @@ GameObject:
   - component: {fileID: 169741130}
   - component: {fileID: 169741131}
   m_Layer: 5
-  m_Name: Text (3)
+  m_Name: TextLine (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -490,7 +490,7 @@ GameObject:
   - component: {fileID: 192320463}
   - component: {fileID: 192320464}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: TextLine (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -569,7 +569,7 @@ GameObject:
   - component: {fileID: 229163394}
   - component: {fileID: 229163395}
   m_Layer: 5
-  m_Name: Text (4)
+  m_Name: TextLine (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -734,7 +734,7 @@ RectTransform:
   - {fileID: 644921500}
   - {fileID: 822972100}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -753,8 +753,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac82112b08a1a23469d2cf0b40a4b955, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pHealthBarFill: {fileID: 0}
-  eHealthBarFill: {fileID: 0}
+  pHealthBarFill: {fileID: 833125372}
+  eHealthBarFill: {fileID: 557130301}
   bManager: {fileID: 0}
   combatLogLines:
   - {fileID: 993029656}
@@ -926,7 +926,7 @@ GameObject:
   - component: {fileID: 822972102}
   - component: {fileID: 822972101}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1081,7 +1081,7 @@ GameObject:
   - component: {fileID: 930146079}
   - component: {fileID: 930146078}
   m_Layer: 5
-  m_Name: Text (6)
+  m_Name: TextLine (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1160,7 +1160,7 @@ GameObject:
   - component: {fileID: 993029655}
   - component: {fileID: 993029656}
   m_Layer: 5
-  m_Name: Text
+  m_Name: TextLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1631,7 +1631,7 @@ Transform:
   - {fileID: 1056212784}
   - {fileID: 1015771429}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1496285288
 GameObject:
@@ -2027,7 +2027,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1675641807
 MonoBehaviour:
@@ -2145,7 +2145,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1747929147
 GameObject:
@@ -2176,7 +2176,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1747929149
 MonoBehaviour:
@@ -2271,13 +2271,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1820997907}
-  m_LocalRotation: {x: 0.46259153, y: -0, z: -0, w: 0.8865715}
-  m_LocalPosition: {x: 0, y: 15.35, z: -14.03}
+  m_LocalRotation: {x: 0.30509225, y: -0, z: -0, w: 0.95232284}
+  m_LocalPosition: {x: 0, y: 8.06, z: -13.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 55.109, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 35.527, y: 0, z: 0}
 --- !u!1 &1989293196
 GameObject:
   m_ObjectHideFlags: 0
@@ -2419,7 +2419,7 @@ GameObject:
   - component: {fileID: 2014437854}
   - component: {fileID: 2014437855}
   m_Layer: 5
-  m_Name: Text (2)
+  m_Name: TextLine (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2579,7 +2579,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2035310238
 MonoBehaviour:

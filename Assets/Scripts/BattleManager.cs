@@ -28,10 +28,25 @@ public class BattleManager : MonoBehaviour
     //objects for combat
     public GameObject playerObj;
     public GameObject enemyObj;
-
-    private bool doBattle = true;
-
     private GameObject gameManager;
+    private GameObject battleUIManager;
+    private bool doBattle = false;
+
+    //events only need types, not variable names
+    public event System.Action<bool, float> UpdateHealth;
+
+    private void Awake()
+    {
+        //sub to BattleManager
+        battleUIManager = GameObject.FindGameObjectWithTag("BattleUIManager");
+        battleUIManager.GetComponent<BattleUIManager>().CallAttack += CheckCombatState;
+        battleUIManager.GetComponent<BattleUIManager>().CallDefend += CheckCombatState;
+        battleUIManager.GetComponent<BattleUIManager>().CallHeal += CheckCombatState;
+        //You would probably have an enum called 'playerDecision" which woudl keep track
+        //of whatever button was pressed (decision amde) and then call CheckCombatState using that
+        //on the players turn automatically run during the enemies turn but turn it bacvk to manual
+        //during the players turn (you can use coroutines and bools to handle this!)
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -40,8 +55,10 @@ public class BattleManager : MonoBehaviour
         {
             enemyList.Add(enemy);
         }
-        //find our gamemangaer
+        //find our gamemanager
         gameManager = GameObject.FindGameObjectWithTag("GameManager");
+        //testing UI
+        //UpdateHealth(true, 0.5f);
     }
 
     // Update is called once per frame
@@ -152,7 +169,15 @@ public class BattleManager : MonoBehaviour
             " attacks " +
             defender.name +
             " for a total of " +
-            (attacker.GetComponent<Stats>().attack - defender.GetComponent<Stats>().defense) + " damage");
+            (attacker.GetComponent<Stats>().attack - defender.GetComponent<Stats>().defense) + 
+            " damage");
+        //setup temporary float value for fill amount (0.0f - 1.0f) bu simply dividing current health by max health
+        float percentage = defender.GetComponent<Stats>().health / defender.GetComponent<Stats>().maxHealth;
+        //debug for reasons
+        Debug.Log(percentage);
+        //
+        //UpdateHealth(combatState == CombatState.PlayerTurn, percentage);
+
     }
 
     IEnumerator battleGo()

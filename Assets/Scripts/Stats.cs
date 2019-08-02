@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class Stats : MonoBehaviour
 {
-    public float level;
+    public int level;
     public float maxHealth;
-    public int health;
+    public float health;
     public int speed;
     public int attack;
     public int defense;
     public int luck;
+    public int plateSize;
+    public int curExp;
+    public int neededExp;
+
     
 
     public bool isDefeated;
@@ -18,9 +22,10 @@ public class Stats : MonoBehaviour
     public enum StatusEffect
     {
         none,
-        angry,
-        sad,
-        stunned
+        salt,
+        bitter,
+        sour,
+        sweet
     }
 
     public StatusEffect myStatus;

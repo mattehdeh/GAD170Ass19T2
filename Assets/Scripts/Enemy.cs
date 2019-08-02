@@ -5,18 +5,27 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public Stats myStats;
-    public Experience myExperience;
+    public int flavourSome;
 
     private GameObject BattleManager;
 
-    public enum EnemyTypes
+    public enum flavourFull
+    {
+        sweet,
+        sour,
+        salty,
+        bitter
+    }
+
+    public enum morselSize
     {
         small,
         medium,
         large
     }
 
-    public EnemyTypes myType;
+    public morselSize mySize;
+    public flavourFull myFlavour;
 
     void Start()
     {
@@ -25,16 +34,28 @@ public class Enemy : MonoBehaviour
         myStats = GetComponent<Stats>();
         //Stats compenent must exist on the object!
 
-       switch (myType)
+       switch (mySize)
         {
-            case EnemyTypes.small:
-                //do setup
+            case morselSize.small:
+                flavourSome = 1;
+                for (int i = 0; i < flavourSome; i++)
+                {
+                    myFlavour = (flavourFull)Random.Range(0, 3);
+                }
                 break;
-            case EnemyTypes.medium:
-                //do thing
+            case morselSize.medium:
+                flavourSome = 2;
+                for (int i = 0; i < flavourSome; i++)
+                {
+                    myFlavour = (flavourFull)Random.Range(0, 3);
+                }
                 break;
-            case EnemyTypes.large:
-                //do it
+            case morselSize.large:
+                flavourSome = 3;
+                for (int i = 0; i < flavourSome; i++)
+                {
+                    myFlavour = (flavourFull)Random.Range(0, 3);
+                }
                 break;
         }
 
@@ -52,10 +73,11 @@ public class Enemy : MonoBehaviour
     {
         target.GetComponent<Player>().Attacked(myStats.attack, Stats.StatusEffect.none);
     }
-    */
+    
 
     public void Defeated()
     {
         BattleManager.GetComponent<BattleManager>().RemoveEnemy(gameObject);
     }
+    */
 }

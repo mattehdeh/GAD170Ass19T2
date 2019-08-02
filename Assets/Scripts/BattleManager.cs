@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class BattleManager : MonoBehaviour
 {
-    public List<GameObject> enemyList;
-
     public List<GameObject> enemySpawnList;
 
     public enum GameState
@@ -30,7 +28,7 @@ public class BattleManager : MonoBehaviour
     public GameObject enemyObj;
     private GameObject gameManager;
     private GameObject battleUIManager;
-    private bool doBattle = false;
+    private bool doBattle = true;
 
     //events only need types, not variable names
     public event System.Action<bool, float> UpdateHealth;
@@ -42,7 +40,7 @@ public class BattleManager : MonoBehaviour
         battleUIManager.GetComponent<BattleUIManager>().CallAttack += CheckCombatState;
         battleUIManager.GetComponent<BattleUIManager>().CallDefend += CheckCombatState;
         battleUIManager.GetComponent<BattleUIManager>().CallHeal += CheckCombatState;
-        //You would probably have an enum called 'playerDecision" which woudl keep track
+        //You would probably have an enum called 'playerDecision" which would keep track
         //of whatever button was pressed (decision amde) and then call CheckCombatState using that
         //on the players turn automatically run during the enemies turn but turn it bacvk to manual
         //during the players turn (you can use coroutines and bools to handle this!)
@@ -51,15 +49,21 @@ public class BattleManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
-        {
-            enemyList.Add(enemy);
-        }
-        //find our gamemanager
+        //find our gameManager
         gameManager = GameObject.FindGameObjectWithTag("GameManager");
+        //copy list of enemies to spawn from
+        foreach(GameObject tempEnemy in gameManager.GetComponent<GameManager>().EnemiesToFight)
+        {
+            enemySpawnList.Add(tempEnemy);
+        }
+        //clear the list so the game manager doesn't need to worry about it and we're ready to go for next time
+        gameManager.GetComponent<GameManager>().EnemiesToFight.Clear();
+        //spawn our first enemy
+        SpawnEnemy();
         //testing UI
         //UpdateHealth(true, 0.5f);
     }
+
 
     // Update is called once per frame
     void Update()
@@ -72,7 +76,7 @@ public class BattleManager : MonoBehaviour
             doBattle = false;
         }
     }
-
+    /*
     public void DamageEnemies()
     {
         foreach (GameObject enemy in enemyList)
@@ -88,20 +92,30 @@ public class BattleManager : MonoBehaviour
             enemy.GetComponent<Stats>().health += 10;
         }
     }
-
+    */
     public void RemoveEnemy(GameObject enemyToRemove)
     {
-        enemyList.Remove(enemyToRemove);
+        //delete enemy from scene. maybe do particles or explosion or whatevs
+        Destroy(enemyToRemove);
+        //make sure to update pur spawn list to get rid of the defeated enemy (usually first position)
+        enemySpawnList.RemoveAt(0);
     }
 
     public void SpawnEnemy()
     {
-        //Spawn an enemy from our list of spawnable enemies
-        //using the size of the list as the random range maximum
-        Instantiate(enemySpawnList[Random.Range(0, enemySpawnList.Count)], transform);
-
+        if (enemySpawnList.Count > 0)
+        {
+            //get the spawn location for the enemies using a tag like "EnemySpawnLOc"
+            Transform EnemySpawnLoc = GameObject.FindGameObjectWithTag("EnemySpawnLoc").transform;
+            //assign the enemy obj
+            enemyObj = Instantiate(enemySpawnList[0], EnemySpawnLoc);
+        }
+        else
+        {
+            combatState = CombatState.Victory;
+        }
     }
-
+    
     public void CheckCombatState()
     {
         switch (combatState)
@@ -115,7 +129,10 @@ public class BattleManager : MonoBehaviour
                 BattleRound(playerObj, enemyObj);
                 //Check if Enemy is defeated
                 if (enemyObj.GetComponent<Stats>().isDefeated)
+                {
+                    RemoveEnemy(enemyObj);
                     SpawnEnemy();
+                }
                 //Next Case. Most Likely EnemyTurn
                 combatState = CombatState.EnemyTurn;
 
@@ -171,7 +188,7 @@ public class BattleManager : MonoBehaviour
             " for a total of " +
             (attacker.GetComponent<Stats>().attack - defender.GetComponent<Stats>().defense) + 
             " damage");
-        //setup temporary float value for fill amount (0.0f - 1.0f) bu simply dividing current health by max health
+        //setup temporary float value for fill amount (0.0f - 1.0f) by simply dividing current health by max health
         float percentage = defender.GetComponent<Stats>().health / defender.GetComponent<Stats>().maxHealth;
         //debug for reasons
         Debug.Log(percentage);

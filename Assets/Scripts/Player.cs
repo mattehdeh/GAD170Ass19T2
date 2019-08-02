@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
     public Stats myStats;
     public Experience myExperience;
 
+    public int plateSize { get; internal set; }
+
     // Start is called before the first frame update
     void Start()
     {

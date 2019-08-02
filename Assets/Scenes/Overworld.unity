@@ -347,6 +347,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a61d7bbc65115114cbdaede8bc4529a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultFoodPrefab: {fileID: 0}
+  EnemySpawnList:
+  - {fileID: 4294013043581200478, guid: d2607d49dfe66e942ab2d1468cb3d69e, type: 3}
+  - {fileID: 8080095340191181363, guid: 43ef6c83262cf7d449cd870eb11ff639, type: 3}
+  - {fileID: 3147746710636495466, guid: 7b077e549ae626343945a4880cf208a5, type: 3}
+  EnemiesToFight: []
+  numOfItems: 0
 --- !u!4 &705754991
 Transform:
   m_ObjectHideFlags: 0

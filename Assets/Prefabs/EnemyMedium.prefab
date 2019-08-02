@@ -107,8 +107,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myStats: {fileID: 0}
-  myExperience: {fileID: 0}
-  myType: 1
+  flavourSome: 0
+  mySize: 1
+  myFlavour: 0
 --- !u!114 &684955146778362642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,11 +138,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 0
+  maxHealth: 150
   health: 150
   speed: 100
   attack: 50
   defense: 25
   luck: 2
+  plateSize: 0
   isDefeated: 0
   myStatus: 0
   attackEffect: 0
